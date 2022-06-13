@@ -1,10 +1,17 @@
 import "./styles.css";
-
+import { ReactLocation, Router } from "react-location";
+import Home from "./components/Home";
+const reactLocation = new ReactLocation();
 export default function App() {
   return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-    </div>
+    <Router
+      location={reactLocation}
+      routes={[
+        {
+          path: "/",
+          element: <Home />
+        }
+      ]}
+    />
   );
 }
